@@ -12,7 +12,7 @@
 	<tr>
 		<td valign="bottom">
 
-<!-- Footer -->
+<!-- Footer
 
 <table border="0" cellpadding="0" width="100%"  class="footer_table" >
             <tr>
@@ -53,7 +53,7 @@
                 </td>
             </tr>
         </table>
-
+-->
 
 
 

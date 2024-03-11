@@ -417,6 +417,7 @@
 							<descriptor>${project.basedir}/src/assemble/openclinica-assemble.xml</descriptor>
 						</descriptors>
 						<appendAssemblyId>false</appendAssemblyId>
+						<!--suppress UnresolvedMavenProperty -->
 						<finalName>${assembly.name}-${project.version}</finalName>
 					</configuration>
 				</plugin>
@@ -436,9 +437,11 @@
 						<!-- Container configuration -->
 						<container>
 							<containerId>tomcat6x</containerId>
+							<!--suppress UnresolvedMavenProperty -->
 							<home>${catalina.home}</home>
 						</container>
 						<configuration>
+							<!--suppress UnresolvedMavenProperty -->
 							<home>${catalina.home}</home>
 							<type>existing</type>
 						</configuration>
