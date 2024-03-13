@@ -110,6 +110,7 @@ public class ChangeStudyServlet extends SecureController {
 
 
         if (StringUtil.isBlank(action)) {
+            logger.info("action={}",action);
             request.setAttribute("studies", validStudies);
 
             forwardPage(Page.CHANGE_STUDY);

@@ -38,13 +38,13 @@
   </tr>
 <jsp:include page="../include/sideInfo.jsp"/>
 
-	<h1><span class="title_manage"><fmt:message key="add_subject" bundle="${resword}"/>- <fmt:message key="instructions" bundle="${restext}"/> <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/openclinica-user-guide/submit-data-module-overview/add-subject')"><img src="images/bt_Help_Manage.gif" border="0" alt="H<fmt:message key="help" bundle="${restext}"/>" title="<fmt:message key="help" bundle="${restext}"/>"></a></span></h1>
-
-
+	<h1><span class="title_manage"><fmt:message key="add_subject" bundle="${resword}"/>- <fmt:message key="instructions" bundle="${restext}"/>
+	<!-- <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/openclinica-user-guide/submit-data-module-overview/add-subject')">
+	<img src="images/bt_Help_Manage.gif" border="0" alt="H<fmt:message key="help" bundle="${restext}"/>" title="<fmt:message key="help" bundle="${restext}"/>">
+	</a> -->
+	</span></h1>
 
 	<br>
-
-
 	<fmt:message key="to_add_subject_enter_ID" bundle="${restext}"/>
 	<br><fmt:message key="should_be_able_to_add_subject" bundle="${restext}"/>
 

@@ -47,7 +47,10 @@
 <jsp:useBean scope='request' id='table' class='org.akaza.openclinica.web.bean.EntityBeanTable'/>
 <jsp:useBean scope="request" id="defSize" type="java.lang.Integer" />
 <h1><span class="title_manage"><fmt:message key="manage_all_event_definitions_in_study" bundle="${restext}"/> <c:out value="${study.name}"/>
-    <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/study-setup')"><img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${resword}"/>" title="<fmt:message key="help" bundle="${resword}"/>"></a></span></h1>
+<!-- <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/study-setup')">
+<img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${resword}"/>" title="<fmt:message key="help" bundle="${resword}"/>">
+</a> -->
+</span></h1>
 
 <div style="float:right;padding-right:6px;width:8%;clear:both">
    <a href="javascript:processPrintCRFRequest('rest/metadata/html/print/<c:out value="${study.oid}"/>/*/*')"

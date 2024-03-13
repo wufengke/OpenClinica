@@ -73,10 +73,13 @@
         <c:otherwise><span class="title_manage"></c:otherwise>
         </c:choose>
 	<fmt:message key="view_discrepancy_notes" bundle="${resword}"/>
-    <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/openclinica-user-guide/monitor-and-manage-data/notes-and-discrepancies')">
+    <!-- <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/openclinica-user-guide/monitor-and-manage-data/notes-and-discrepancies')">
         <c:choose>
         <c:when test="${module eq 'manage'}"><img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${resword}"/>" title="<fmt:message key="help" bundle="${resword}"/>"></c:when>
-        <c:otherwise><img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${resword}"/>" title="<fmt:message key="help" bundle="${resword}"/>"></c:otherwise></c:choose></a>
+        <c:otherwise>
+        <img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${resword}"/>" title="<fmt:message key="help" bundle="${resword}"/>"></c:otherwise></c:choose>
+        </a>
+    -->
  <%--<a href="javascript:openDocWindow('ViewNotes?print=yes')"--%>
 <%--<a href="javascript:onInvokeAction('listNotes','filter')"--%>
 	<%--onMouseDown="javascript:setImage('bt_Print0','images/bt_Print_d.gif');"--%>
@@ -146,7 +149,7 @@
             <c:forEach var="typeName"  items="${typeNames}">
                 <td align="center"><strong>${typeName}</strong></td>
             </c:forEach>
-            <td align="center"><strong>Total</strong></td>
+            <td align="center"><strong>总数</strong></td>
         </tr>
             <c:forEach var="status" items="${mapKeys}">
                 <tr>
@@ -158,7 +161,7 @@
                 </tr>
             </c:forEach>
         <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-        <tr><td><strong>Total</strong></td>
+        <tr><td><strong>总数</strong></td>
             <c:forEach var="typeName"  items="${typeNames}">
                 <td align="center">${typeKeys[typeName]}</td>
             </c:forEach>

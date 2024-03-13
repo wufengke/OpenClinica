@@ -111,7 +111,7 @@
 	</div>
 
 <input type="submit" name="Submit" value="<fmt:message key="submit" bundle="${resword}"/>" class="button_medium">
-<input type="button" onclick="confirmCancel('ListUserAccounts');"  name="cancel" value="   <fmt:message key="cancel" bundle="${resword}"/>   " class="button_medium"/>
+<input type="button" onclick="confirmCancel('ListUserAccounts');"  name="cancel" value="<fmt:message key="cancel" bundle="${resword}"/>   " class="button_medium"/>
 
 </form>
 

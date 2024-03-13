@@ -322,7 +322,7 @@ function handleUserSource() {
 							<option value="0">-<fmt:message key="select" bundle="${resword}"/>-</option>
 
                             <c:forEach var="study" items="${studies}">
-							<c:if test = "${study.status.getName().trim() ne 'removed'}">
+							<c:if test = "${study.status.name ne 'removed'}">
 								<c:choose>
 									<c:when test="${activeStudy == study.id}">
 										<c:choose>

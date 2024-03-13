@@ -64,7 +64,7 @@
     <td><div class="formfieldXL_BG">
         <select name="studyId" class="formfieldXL" onchange="sendUrl();">
          <c:forEach var="userStudy" items="${studies}">
-		 <c:if test = "${userStudy.status.getName() ne 'removed'}">
+		 <c:if test = "${userStudy.status.name ne 'removed'}">
            <c:choose>
            <c:when test="${userStudy.parentStudyId > 0}">
                 <c:choose>

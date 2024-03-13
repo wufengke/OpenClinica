@@ -82,11 +82,7 @@
             </h1>
             <p><fmt:message key="add_new_study_screen_content" bundle="${resword}"/></p>
             <br>
-       
-
-       <a href="CreateStudy" style="color: rgba(120, 158, 197, 1); background: #ffc;PADDING-LEFT: 1px;border: 1px solid blue;">Continue in OC3</a>       
-       <a href="https://openclinica.com/upgrade" target="_blank" style="color: rgba(120, 158, 197, 1); background: #ffc;PADDING-LEFT: 1px;border: 1px solid blue;">Tell me more about OC4</a>       
-             
+            <a href="CreateStudy" style="color: rgba(120, 158, 197, 1); background: #ffc;PADDING-LEFT: 1px;border: 1px solid blue;">继续创建</a>
            </form>
     </div>
 

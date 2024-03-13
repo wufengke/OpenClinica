@@ -13,6 +13,7 @@
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/includes/wz_tooltip/wz_tooltip.js"></script>
 <table border="0" cellpadding="0" width="100%"  >
+<!--
             <tr>
                 <td class="footer_bottom" style="width:240px">
                 <a href="http://www.openclinica.com" target="new"><fmt:message key="openclinica_portal" bundle="${resword}"/></a>
@@ -45,7 +46,8 @@
                      <div  id="version"></div><fmt:message key="Version_release" bundle="${licensing}"/> </div>
                 </td>
             </tr>
-        </table>
+-->
+ </table>
 
 <!-- End Footer -->
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/favicon.ico">

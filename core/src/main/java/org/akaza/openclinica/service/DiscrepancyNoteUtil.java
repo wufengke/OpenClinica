@@ -52,7 +52,7 @@ public class DiscrepancyNoteUtil {
 
     // These two variables are to arrange the Summary Statistics accordingly
     // Mantis Issue: 7771
-    public static final String[] TYPE_NAMES = {"Query", "Failed Validation Check", "Reason for Change", "Annotation"};
+    public static final String[] TYPE_NAMES = {"查询", "校验失败监察", "变更原因", "注释"};
 
     public static String[] getTypeNames() {
         return TYPE_NAMES;
