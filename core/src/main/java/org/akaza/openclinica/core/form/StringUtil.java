@@ -40,8 +40,8 @@ public class StringUtil {
 
     }
 
-   
-    
+
+
 
     /**
      * Checks whether a string is blank
@@ -63,7 +63,7 @@ public class StringUtil {
     }
 
     public static boolean isValidDate(String s) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd", Locale.US);
         sdf.setLenient(false);
         try {
             java.util.Date date = sdf.parse(s);
@@ -102,11 +102,11 @@ public class StringUtil {
      * @return
      */
     // ywang (Nov., 2008)
-    public static boolean isFormatDate(String s, String dateFormat) { 
+    public static boolean isFormatDate(String s, String dateFormat) {
         String dateformat = parseDateFormat(dateFormat);
         return isSameDate(dateformat, dateformat, s);
     }
-    
+
     public static boolean isFormatDate(String s, String dateFormat, Locale locale) {
         String dateformat = parseDateFormat(dateFormat);
         return isSameDate(dateformat, dateformat, s, locale);
@@ -123,12 +123,13 @@ public class StringUtil {
     //ywang (Oct., 2011)
     public static boolean isDateFormatString(String s, String dateFormat, Locale locale) {
         String dateformat = parseDateFormat(dateFormat);
-        SimpleDateFormat f = new SimpleDateFormat(dateformat, locale);
+        SimpleDateFormat f = new SimpleDateFormat(dateformat, Locale.US);
         f.setLenient(false);
         try {
             f.parse(s);
             return true;
         } catch (Exception ex) {
+            ex.printStackTrace();
             return false;
         }
     }
@@ -163,11 +164,7 @@ public class StringUtil {
         }
         String yearformat = parseDateFormat(yearFormat) + "-MM-dd";
         SimpleDateFormat sdf_y;
-        if(locale == null) {
-            sdf_y = new SimpleDateFormat(yearformat);
-        }else {
-            sdf_y = new SimpleDateFormat(yearformat, locale);
-        }
+        sdf_y = new SimpleDateFormat(yearformat,Locale.US);
         sdf_y.setLenient(false);
         String sy = s + "-01-18";
         try {
@@ -226,17 +223,17 @@ public class StringUtil {
      * @return
      */
     public static boolean isSameDate(String dateFormat1, String dateFormat2, String dateStr) {
-        SimpleDateFormat sdf1 = new SimpleDateFormat(dateFormat1);
+        SimpleDateFormat sdf1 = new SimpleDateFormat(dateFormat1, Locale.US);
         sdf1.setLenient(false);
-        SimpleDateFormat sdf2 = new SimpleDateFormat(dateFormat2);
+        SimpleDateFormat sdf2 = new SimpleDateFormat(dateFormat2, Locale.US);
         sdf2.setLenient(false);
         return sameDate(sdf1, sdf2, dateStr);
     }
 
     public static boolean isSameDate(String dateFormat1, String dateFormat2, String dateStr, Locale locale) {
-        SimpleDateFormat sdf1 = new SimpleDateFormat(dateFormat1, locale);
+        SimpleDateFormat sdf1 = new SimpleDateFormat(dateFormat1, Locale.US);
         sdf1.setLenient(false);
-        SimpleDateFormat sdf2 = new SimpleDateFormat(dateFormat2, locale);
+        SimpleDateFormat sdf2 = new SimpleDateFormat(dateFormat2, Locale.US);
         sdf2.setLenient(false);
         return sameDate(sdf1,sdf2,dateStr);
     }

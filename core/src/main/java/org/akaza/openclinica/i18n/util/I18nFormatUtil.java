@@ -25,7 +25,7 @@ public class I18nFormatUtil {
     public final static SimpleDateFormat getDateFormat(Locale locale) {
         Locale l = resolveLocale(locale);
         String dateFormat = dateFormatString(locale);
-        return new SimpleDateFormat(dateFormat,l);
+        return new SimpleDateFormat(dateFormat, Locale.US);
     }
 
     /**
@@ -47,7 +47,7 @@ public class I18nFormatUtil {
 	public final static SimpleDateFormat getDateTimeFormat(Locale locale) {
         Locale l = resolveLocale(locale);
         return new SimpleDateFormat(
-                ResourceBundleProvider.getFormatBundle(l).getString("date_time_format_string"),l);
+                ResourceBundleProvider.getFormatBundle(l).getString("date_time_format_string"), Locale.US);
     }
 
     /**
@@ -58,7 +58,7 @@ public class I18nFormatUtil {
 	public final static SimpleDateFormat getYearMonthFormat(Locale locale) {
 	    Locale l = resolveLocale(locale);
 	    String yearMonthFormat = yearMonthFormatString(l);
-	    return new SimpleDateFormat(yearMonthFormat,l);
+	    return new SimpleDateFormat(yearMonthFormat, Locale.US);
 	}
 
     /**

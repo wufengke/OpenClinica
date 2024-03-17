@@ -151,7 +151,11 @@
     <div class="textbox_center">
         <table border="0" cellpadding="0" cellspacing="0" width="450">
           <tr valign="top">
-              <td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId'); return false;"><b><fmt:message key="unique_protocol_ID" bundle="${resword}"/></b>:</a></td><td><div class="formfieldXL_BG">
+              <td class="formlabel">
+              <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId'); return false;">
+              <b><fmt:message key="unique_protocol_ID" bundle="${resword}"/></b>:</a>-->
+              <b><fmt:message key="unique_protocol_ID" bundle="${resword}"/></b>:
+              </td><td><div class="formfieldXL_BG">
           <input type="text" name="uniqueProId" value="<c:out value="${studyToView.identifier}"/>" class="formfieldXL"></div>
           <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="uniqueProId"/></jsp:include></td>
               <td width="10%" >*</td></tr>
@@ -221,7 +225,11 @@
 
               </div>
           </td><td>*</td></tr>
-          <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#SecondaryIds" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#SecondaryIds'); return false;"><b><fmt:message key="secondary_IDs" bundle="${resword}"/></b>:</a><br>(<fmt:message key="separate_by_commas" bundle="${resword}"/>)</td>
+          <tr valign="top"><td class="formlabel">
+          <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#SecondaryIds" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#SecondaryIds'); return false;">
+          <b><fmt:message key="secondary_IDs" bundle="${resword}"/></b>:</a>-->
+          <b><fmt:message key="secondary_IDs" bundle="${resword}"/></b>:
+          <br>(<fmt:message key="separate_by_commas" bundle="${resword}"/>)</td>
           <td> <div class="formtextareaXL4_BG">
            <textarea class="formtextareaXL4" name="secondProId" rows="4" cols="50"><c:out value="${studyToView.secondaryIdentifier}"/></textarea></div>
            <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="secondProId"/></jsp:include>
@@ -233,7 +241,11 @@
           <input type="text" name="prinInvestigator" value="<c:out value="${studyToView.principalInvestigator}"/>" class="formfieldXL"></div>
           <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="prinInvestigator"/></jsp:include></td><td>*</td></tr>
 
-            <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#BriefSummary" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#BriefSummary'); return false;"><fmt:message key="brief_summary" bundle="${resword}"/>:</a></td><td><div class="formtextareaXL4_BG">
+            <tr valign="top"><td class="formlabel">
+            <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#BriefSummary" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#BriefSummary'); return false;">
+            <fmt:message key="brief_summary" bundle="${resword}"/>:</a>-->
+            <fmt:message key="brief_summary" bundle="${resword}"/>:
+            </td><td><div class="formtextareaXL4_BG">
             <textarea class="formtextareaXL4" name="description" rows="4" cols="50"><c:out value="${studyToView.summary}"/></textarea></div>
             <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="description"/></jsp:include></td><td >*</td></tr>
 
@@ -290,7 +302,11 @@
 
 
 
-           <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate'); return false;"><fmt:message key="protocol_verification" bundle="${resword}"/>:</a></td><td>
+           <tr valign="top"><td class="formlabel">
+           <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate'); return false;">
+           <fmt:message key="protocol_verification" bundle="${resword}"/>:</a>-->
+           <fmt:message key="protocol_verification" bundle="${resword}"/>:
+           </td><td>
 
            <div class="formfieldXL_BG">
                <input type="text" name="protocolDateVerification" value="<c:out value="${protocolDateVerification}"/>" class="formfieldM" id="protocolDateVerificationField"></div>
@@ -336,8 +352,10 @@
 
           <c:if test='${isInterventional==1}'>
           <tr valign="top">
-              <td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntPurpose" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntPurpose'); return false;">
-              <fmt:message key="purpose" bundle="${resword}"/></a>:</td>
+              <td class="formlabel">
+              <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntPurpose" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntPurpose'); return false;">
+              <fmt:message key="purpose" bundle="${resword}"/></a>-->
+              <fmt:message key="purpose" bundle="${resword}"/>:</td>
               <td>
                 <c:set var="purpose1" value="${studyToView.purpose}"/>
                 <div class="formfieldXL_BG"><select name="purpose" class="formfieldXL">
@@ -357,8 +375,10 @@
                 </select></div>
           <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="purpose"/></jsp:include></td>
           </tr>
-          <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntAllocation" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntAllocation'); return false;">
-          <fmt:message key="allocation" bundle="${resword}"/></a>:</td><td>
+          <tr valign="top"><td class="formlabel">
+          <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntAllocation" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntAllocation'); return false;">
+          <fmt:message key="allocation" bundle="${resword}"/></a>-->
+          <fmt:message key="allocation" bundle="${resword}"/>:</td><td>
            <c:set var="allocation1" value="${studyToView.allocation}"/>
           <div class="formfieldXL_BG"><select name="allocation" class="formfieldXL">
            <option value="">-<fmt:message key="select" bundle="${resword}"/>-</option>
@@ -378,8 +398,10 @@
           </select></div>
           </td></tr>
 
-          <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntMasking" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntMasking'); return false;">
-              <fmt:message key="masking" bundle="${resword}"/></a>:</td><td>
+          <tr valign="top"><td class="formlabel">
+          <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntMasking" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntMasking'); return false;">
+              <fmt:message key="masking" bundle="${resword}"/></a>-->
+              <fmt:message key="masking" bundle="${resword}"/>:</td><td>
           <c:set var="masking1" value="${studyToView.masking}"/>
           <div class="formfieldXL_BG"><select name="masking" class="formfieldXL">
            <option value="">-<fmt:message key="select" bundle="${resword}"/>-</option>
@@ -418,8 +440,10 @@
               </c:forEach>
             </select></div>
            </td></tr>
-           <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntDesign" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntDesign'); return false;">
-           <fmt:message key="intervention_model" bundle="${resword}"/></a>:</td><td>
+           <tr valign="top"><td class="formlabel">
+           <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntDesign" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntDesign'); return false;">
+           <fmt:message key="intervention_model" bundle="${resword}"/></a>-->
+           <fmt:message key="intervention_model" bundle="${resword}"/>:</td><td>
 			<%-- was assignment, tbh --%>
            <c:set var="assignment1" value="${studyToView.assignment}"/>
             <div class="formfieldXL_BG"><select name="assignment" class="formfieldXL">
@@ -440,8 +464,10 @@
              </c:forEach>
            </select></div>
            </td></tr>
-          <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntEndpoints" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntEndpoints'); return false;">
-          <fmt:message key="study_classification" bundle="${resword}"/></a>:</td><td>
+          <tr valign="top"><td class="formlabel">
+          <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#IntEndpoints" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#IntEndpoints'); return false;">
+          <fmt:message key="study_classification" bundle="${resword}"/></a>-->
+          <fmt:message key="study_classification" bundle="${resword}"/>:</td><td>
 			<%-- was endpoint, tbh --%>
            <c:set var="endpoint1" value="${studyToView.endpoint}"/>
            <div class="formfieldXL_BG"><select name="endpoint" class="formfieldXL">
@@ -508,8 +534,11 @@
           <td>&nbsp;</td>
           </tr>
 
-          <tr valign="bottom"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#EligibilitySamplingMethod" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#EligibilitySamplingMethod'); return false;">
-          <fmt:message key="selection" bundle="${resword}"/></a></td><td>
+          <tr valign="bottom"><td class="formlabel">
+          <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#EligibilitySamplingMethod" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#EligibilitySamplingMethod'); return false;">
+          <fmt:message key="selection" bundle="${resword}"/></a>-->
+          <fmt:message key="selection" bundle="${resword}"/>
+          </td><td>
           <c:set var="selection1" value="${studyToView.selection}"/>
           <div class="formfieldXL_BG">
           <select name="selection" class="formfieldXL">

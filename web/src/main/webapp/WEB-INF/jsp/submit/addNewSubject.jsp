@@ -191,12 +191,10 @@
 
 		<td class="formlabel">
             <c:if test="${study.parentStudyId == 0}">
-                <fmt:message key="date_of_enrollment_for_study" bundle="${resword}"/>'
-                <c:out value="${study.name}" /> ' :
+                <fmt:message key="date_of_enrollment_for_study" bundle="${resword}"/>'<c:out value="${study.name}" />' :
             </c:if>
             <c:if test="${study.parentStudyId > 0}">
-                <fmt:message key="date_of_enrollment_for_study" bundle="${resword}"/>'
-                <c:out value="${study.parentStudyName}" /> ' :
+                <fmt:message key="date_of_enrollment_for_study" bundle="${resword}"/>'<c:out value="${study.parentStudyName}" />' :
             </c:if>
 
         </td>

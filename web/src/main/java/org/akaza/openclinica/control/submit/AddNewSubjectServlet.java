@@ -180,6 +180,7 @@ public class AddNewSubjectServlet extends SecureController {
                 setUpBeans(classes);
                 Date today = new Date(System.currentTimeMillis());
                 String todayFormatted = local_df.format(today);
+                logger.info("todayFormatted={}", todayFormatted);
                 fp.addPresetValue(INPUT_ENROLLMENT_DATE, todayFormatted);
 
                 // YW 10-07-2007 <<
@@ -286,7 +287,7 @@ public class AddNewSubjectServlet extends SecureController {
             }
 
             HashMap errors = v.validate();
-
+            logger.error("errors={}", errors);
             SubjectDAO sdao = new SubjectDAO(sm.getDataSource());
             String uniqueIdentifier = fp.getString(INPUT_UNIQUE_IDENTIFIER);// global
             // Id

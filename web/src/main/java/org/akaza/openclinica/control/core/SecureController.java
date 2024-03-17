@@ -11,7 +11,6 @@ package org.akaza.openclinica.control.core;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
@@ -50,7 +49,6 @@ import org.akaza.openclinica.bean.extract.ArchivedDatasetFileBean;
 import org.akaza.openclinica.bean.login.StudyUserRoleBean;
 import org.akaza.openclinica.bean.login.UserAccountBean;
 import org.akaza.openclinica.bean.managestudy.DiscrepancyNoteBean;
-import org.akaza.openclinica.bean.managestudy.EventDefinitionCRFBean;
 import org.akaza.openclinica.bean.managestudy.StudyBean;
 import org.akaza.openclinica.bean.managestudy.StudyEventBean;
 import org.akaza.openclinica.bean.managestudy.StudyEventDefinitionBean;
@@ -68,7 +66,6 @@ import org.akaza.openclinica.dao.admin.CRFDAO;
 import org.akaza.openclinica.dao.core.AuditableEntityDAO;
 import org.akaza.openclinica.dao.core.CoreResources;
 import org.akaza.openclinica.dao.extract.ArchivedDatasetFileDAO;
-import org.akaza.openclinica.dao.hibernate.EventDefinitionCrfTagDao;
 import org.akaza.openclinica.dao.hibernate.UserAccountDao;
 import org.akaza.openclinica.dao.login.UserAccountDAO;
 import org.akaza.openclinica.dao.managestudy.StudyDAO;
@@ -82,9 +79,6 @@ import org.akaza.openclinica.dao.service.StudyParameterValueDAO;
 import org.akaza.openclinica.dao.submit.EventCRFDAO;
 import org.akaza.openclinica.dao.submit.ItemDAO;
 import org.akaza.openclinica.dao.submit.ItemDataDAO;
-import org.akaza.openclinica.domain.datamap.EventDefinitionCrf;
-import org.akaza.openclinica.domain.datamap.EventDefinitionCrfTag;
-import org.akaza.openclinica.domain.user.UserAccount;
 import org.akaza.openclinica.exception.OpenClinicaException;
 import org.akaza.openclinica.i18n.core.LocaleResolver;
 import org.akaza.openclinica.i18n.util.I18nFormatUtil;
@@ -174,7 +168,7 @@ public abstract class SecureController extends HttpServlet implements SingleThre
     /**
      * local_df is set to the client locale in each request.
      */
-    protected SimpleDateFormat local_df = new SimpleDateFormat("MM/dd/yyyy");
+    protected SimpleDateFormat local_df = new SimpleDateFormat("dd-MMM-yyyy");
     public static ResourceBundle resadmin, resaudit, resexception, resformat, respage, resterm, restext, resword, resworkflow;
 
     protected StudyInfoPanel panel = new StudyInfoPanel();
@@ -1182,8 +1176,6 @@ public abstract class SecureController extends HttpServlet implements SingleThre
      * allows the test case to call the outer class' private process() method.
      *
      * @author Bruce W. Perry 01/2008
-     * @see org.akaza.openclinica.servlettests.SecureControllerServletTest
-     * @see org.akaza.openclinica.servlettests.SecureControllerWrapper
      */
     public class SecureControllerTestDelegate {
 
@@ -1202,7 +1194,6 @@ public abstract class SecureController extends HttpServlet implements SingleThre
     }
 
     /**
-	 * @param userId
 	 * @throws InsufficientPermissionException
 	 */
 	protected void techAdminProtect(UserAccountBean userBean) throws InsufficientPermissionException {		

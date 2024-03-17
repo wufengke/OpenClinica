@@ -119,7 +119,11 @@
   </select></div>
   </td></tr>
 
-  <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId'); return false;"><fmt:message key="masking" bundle="${resword}"/>:</td><td>
+  <tr valign="top"><td class="formlabel">
+  <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId'); return false;">
+  <fmt:message key="masking" bundle="${resword}"/>:</a>-->
+  <fmt:message key="masking" bundle="${resword}"/>:
+  </td><td>
   <c:set var="masking1" value="${newStudy.masking}"/>
   <div class="formfieldXL_BG"><select name="masking" class="formfieldXL">
    <option value="">-<fmt:message key="select" bundle="${resword}"/>-</option>

@@ -74,7 +74,9 @@
 </c:choose>
 
 <fmt:message key="import_rule_data" bundle="${resworkflow}"/> ${fn:escapeXml(study.name)}
-<a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/rules')"><img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${restext}"/>" title="<fmt:message key="help" bundle="${restext}"/>"></a>
+<!-- <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/rules')">
+<img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${restext}"/>" title="<fmt:message key="help" bundle="${restext}"/>">
+</a> -->
 </h1>
 
 <form action="VerifyImportedRule?action=save" name="verifyImportedRule" method="POST">

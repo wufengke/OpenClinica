@@ -35,7 +35,7 @@
 
 <c:set var="contextPath" value="${fn:replace(pageContext.request.requestURL, fn:substringAfter(pageContext.request.requestURL, pageContext.request.contextPath), '')}" />
 
-<title>OpenClinica <fmt:message key="view_data_entry" bundle="${resword}"/></title>
+<title>凯格 <fmt:message key="view_data_entry" bundle="${resword}"/></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <link rel="stylesheet" href="includes/styles.css" type="text/css" media="screen">

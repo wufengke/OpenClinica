@@ -6,7 +6,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<title>OpenClinica</title>
+<title>凯格</title>
 
 <link rel="stylesheet" href="../includes/styles.css" type="text/css">
 <link rel="stylesheet" href="../includes/styles2.css" type="text/css">

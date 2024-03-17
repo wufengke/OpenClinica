@@ -7,6 +7,7 @@
  */
 package org.akaza.openclinica.control.form;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -34,17 +35,17 @@ import org.slf4j.LoggerFactory;
 
 /**
  * @author ssachs
- *
+ * <p>
  * This class does two things: retrieve input from a form, and prepare to set
  * default values
- *
+ * <p>
  * three dimensions:
  * <ul>
  * <li> do we throw an exception when the key isn't present?</li>
  * <li> do we look in the attributes and parameters, or just the parameters?</li>
  * <li> do we look in an HttpServletRequest, or a MultipartRequest?</li>
  * </ul>
- *
+ * <p>
  * TODO handle MultiPartRequests - is this a priority, since we don't have many
  * file uploads?
  */
@@ -87,8 +88,7 @@ public class FormProcessor {
     }
 
     /**
-     * @param request
-     *            The request to set.
+     * @param request The request to set.
      */
     public void setRequest(HttpServletRequest request) {
         this.request = request;
@@ -102,8 +102,7 @@ public class FormProcessor {
     }
 
     /**
-     * @param presetValues
-     *            The presetValues to set.
+     * @param presetValues The presetValues to set.
      */
     public void setPresetValues(HashMap presetValues) {
         this.presetValues = presetValues;
@@ -143,15 +142,14 @@ public class FormProcessor {
      * For an input which is supposed to return an array of strings, such as a
      * checkbox or multiple-select input, retrieve all of those strings in an
      * ArrayList.
-     *
+     * <p>
      * Note that the values must be contained in the request parameters, not in
      * the attributes.
      *
-     * @param fieldName
-     *            The name of the input
+     * @param fieldName The name of the input
      * @return An array of all the Strings corresponding to that input.
-     *         Guaranteed to be non-null. All elements guaranteed to be
-     *         non-null.
+     * Guaranteed to be non-null. All elements guaranteed to be
+     * non-null.
      */
     public ArrayList getStringArray(String fieldName) {
         ArrayList answer = new ArrayList();
@@ -181,7 +179,7 @@ public class FormProcessor {
             String name = names.nextElement();
             // System.out.println("*** Comparing " + name + " and " + seq.toString() );
             if (name.contains(seq)) {
-            //    System.out.println("*** FOUND " + seq.toString());
+                //    System.out.println("*** FOUND " + seq.toString());
                 return true;
             }
 
@@ -265,13 +263,11 @@ public class FormProcessor {
     }
 
     /**
-     * @param fieldName
-     *            The name of the HTML form field which holds the Entity's
-     *            primary key.
-     * @param edao
-     *            The data source for the Entity.
+     * @param fieldName The name of the HTML form field which holds the Entity's
+     *                  primary key.
+     * @param edao      The data source for the Entity.
      * @return The Entity whose primary key is specified by fieldName, and which
-     *         can be retrieved by edao.
+     * can be retrieved by edao.
      * @throws OpenClinicaException
      */
     public EntityBean getEntity(String fieldName, EntityDAO edao) throws OpenClinicaException {
@@ -282,6 +278,7 @@ public class FormProcessor {
 
     /**
      * Precondition: ResourceBundleProvider's locale has been updated.
+     *
      * @param date
      * @return
      */
@@ -295,6 +292,7 @@ public class FormProcessor {
             answer = f.parse(date);
         } catch (Exception e) {
             //answer = DEFAULT_DATE;
+            logger.error(date, e);
             answer = null;
         }
 
@@ -328,10 +326,9 @@ public class FormProcessor {
     }
 
     /**
-     * @param dateTime
-     *            A string in in date_time_format_string
+     * @param dateTime A string in in date_time_format_string
      * @return The Date object corresponding to the provided string, or
-     *         DEFAULT_DATE if the string is improperly formatted.
+     * DEFAULT_DATE if the string is improperly formatted.
      */
     public Date getDateTimeFromString(String dateTime) {
         Date answer;
@@ -394,11 +391,10 @@ public class FormProcessor {
 
         java.util.Date result;
         try {
-            logger.debug("trying to parse " + fieldValue + " on the pattern " + resformat.getString("date_time_format_string"));
+            logger.info("trying to parse " + fieldValue + " on the pattern " + resformat.getString("date_time_format_string"));
             result = sdf.parse(fieldValue);
         } catch (Exception fe) {
-            logger.debug("failed to parse");
-            fe.printStackTrace();
+            logger.error("failed to parse {}", fieldValue, fe);
             result = DEFAULT_DATE;
             logger.debug("replace with default date: " + result.toString());
         }
@@ -433,12 +429,10 @@ public class FormProcessor {
     }
 
     /**
-     * @param fieldName
-     *            The name of the HTML form field whose value should be the
-     *            Entity's primary key.
-     * @param value
-     *            The Entity whose primary key will populate the HTML form
-     *            field.
+     * @param fieldName The name of the HTML form field whose value should be the
+     *                  Entity's primary key.
+     * @param value     The Entity whose primary key will populate the HTML form
+     *                  field.
      */
     public void addPresetValue(String fieldName, EntityBean value) {
         int id = value.getId();
@@ -471,14 +465,13 @@ public class FormProcessor {
     /**
      * Propogates values in date/time fields to the preset values, so that they
      * can be used to populate a form.
-     *
+     * <p>
      * In particular, for each prefix in prefixes, the following strings are
      * loaded in from the form, and propagated to the preset values: prefix +
      * "Date" prefix + "Hour" prefix + "Minute" prefix + "Half"
      *
-     * @param prefixes
-     *            An array of Strings. Each String is a prefix for a set of
-     *            date/time fields.
+     * @param prefixes An array of Strings. Each String is a prefix for a set of
+     *                 date/time fields.
      */
     public void setCurrentDateTimeValuesAsPreset(String prefixes[]) {
         for (String prefix : prefixes) {
@@ -517,7 +510,7 @@ public class FormProcessor {
         // if no value was speified on the form or in the GET query, then
         // keep the default value for that bit
         // otherwise, the bits will just be forced to false
-        String blnFields[] = { EBL_SORT_ORDER, EBL_FILTERED, EBL_PAGINATED };
+        String blnFields[] = {EBL_SORT_ORDER, EBL_FILTERED, EBL_PAGINATED};
 
         for (int i = 0; i < blnFields.length; i++) {
             String value = getString(blnFields[i]);
@@ -552,7 +545,7 @@ public class FormProcessor {
         // if no value was speified on the form or in the GET query, then
         // keep the default value for that bit
         // otherwise, the bits will just be forced to false
-        String blnFields[] = { EBL_SORT_ORDER, EBL_FILTERED, EBL_PAGINATED };
+        String blnFields[] = {EBL_SORT_ORDER, EBL_FILTERED, EBL_PAGINATED};
 
         for (int i = 0; i < blnFields.length; i++) {
             String value = getString(blnFields[i]);

@@ -71,12 +71,17 @@
 <table border="0" cellpadding="0" cellspacing="0">
 
   <tr valign="top"><td class="formlabel">
-  <a href="http://prsinfo.clinicaltrials.gov/definitions.html#Conditions" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#Conditions'); return false;"><fmt:message key="conditions" bundle="${resword}"/></a>:</td><td>
+  <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#Conditions" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#Conditions'); return false;">
+  <fmt:message key="conditions" bundle="${resword}"/></a>-->
+  <fmt:message key="conditions" bundle="${resword}"/>:</td><td>
   <div class="formfieldXL_BG"><input type="text" name="conditions" value="<c:out value="${newStudy.conditions}"/>" class="formfieldXL"></div>
   <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="conditions"/></jsp:include>
   </td></tr>
 
-  <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#Keywords" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#Keywords'); return false;"><fmt:message key="keywords" bundle="${resword}"/></a>:<br>(<fmt:message key="separate_by_commas" bundle="${resword}"/>)</td><td>
+  <tr valign="top"><td class="formlabel">
+  <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#Keywords" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#Keywords'); return false;">
+  <fmt:message key="keywords" bundle="${resword}"/></a>-->
+  <fmt:message key="keywords" bundle="${resword}"/>:<br>(<fmt:message key="separate_by_commas" bundle="${resword}"/>)</td><td>
   <div class="formtextareaXL4_BG"><textarea name="keywords" rows="4" cols="50" class="formtextareaXL4"><c:out value="${newStudy.keywords}"/></textarea></div>
   <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="keywords"/></jsp:include>
   </td></tr>

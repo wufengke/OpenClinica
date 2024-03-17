@@ -8,7 +8,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-  <title>OpenClinica</title>
+  <title>凯格</title>
   <link type="text/css" rel="stylesheet" href="<c:url value="/style.css"/>"/>
   <script type="text/JavaScript" language="JavaScript" src="../includes/jmesa/jquery.min.js"></script>
   <script type="text/javascript" language="JavaScript" src="../includes/jmesa/jquery-migrate-3.4.1.js"></script>

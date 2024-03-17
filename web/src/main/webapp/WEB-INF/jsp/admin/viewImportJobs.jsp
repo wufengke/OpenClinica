@@ -42,9 +42,9 @@
 <jsp:useBean scope='request' id='message' class='java.lang.String'/>
 
 <h1><span class="title_manage"><fmt:message key="view_scheduled_inport_jobs" bundle="${resword}"/>
-<a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/brief-overview/jobs#content-title-4364')">
+<!-- <a href="javascript:openDocWindow('https://docs.openclinica.com/3.1/brief-overview/jobs#content-title-4364')">
 <img src="images/bt_Help_Manage.gif" border="0" alt="<fmt:message key="help" bundle="${resword}"/>" title="<fmt:message key="help" bundle="${resword}"/>">
-</a>
+</a> -->
 </span>
 </h1>
 

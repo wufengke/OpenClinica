@@ -89,7 +89,10 @@
 
 <div class="textbox_center">
 <table border="0" cellpadding="0" cellspacing="0" >
- <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#StudyPhase" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#StudyPhase'); return false;"><fmt:message key="study_phase" bundle="${resword}"/></a>:</td><td>
+ <tr valign="top"><td class="formlabel">
+ <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#StudyPhase" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#StudyPhase'); return false;">
+ <fmt:message key="study_phase" bundle="${resword}"/></a>-->
+ <fmt:message key="study_phase" bundle="${resword}"/>:</td><td>
   <c:set var="phase1" value="${newStudy.phase}"/>
   <div class="formfieldL_BG"><select name="phase" class="formfieldL">
    <c:forEach var="phase" items="${studyPhaseMap}">
@@ -105,7 +108,10 @@
   </select></div>
   </td><td>*</td></tr>
 
-  <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#StudyType" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#StudyType'); return false;"><fmt:message key="protocol_type" bundle="${resword}"/></a>:</td><td>
+  <tr valign="top"><td class="formlabel">
+  <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#StudyType" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#StudyType'); return false;">
+  <fmt:message key="protocol_type" bundle="${resword}"/></a>-->
+  <fmt:message key="protocol_type" bundle="${resword}"/>:</td><td>
   <c:set var="type1" value="observational"/>
   <c:choose>
    <c:when test="${newStudy.protocolTypeKey == type1}">
@@ -152,7 +158,9 @@
 
   <tr valign="top">
       <td class="formlabel" width="33%">
-          <a href="http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate'); return false;"><fmt:message key="protocol_verification" bundle="${resword}"/>:</a>
+          <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate'); return false;">
+          <fmt:message key="protocol_verification" bundle="${resword}"/>:</a> -->
+          <fmt:message key="protocol_verification" bundle="${resword}"/>:
       </td>
       <td width="33%">
           <div class="formfieldL_BG">

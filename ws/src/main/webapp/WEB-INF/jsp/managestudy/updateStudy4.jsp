@@ -112,7 +112,9 @@
   </c:choose>
   </td></tr>
 
-  <tr valign="bottom"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId'); return false;">
+  <tr valign="bottom"><td class="formlabel">
+  <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#PrimaryId'); return false;">
+  <fmt:message key="selection" bundle="${resword}"/>:</a>-->
   <fmt:message key="selection" bundle="${resword}"/>:</td><td>
   <c:set var="selection1" value="${newStudy.selection}"/>
   <div class="formfieldXL_BG">

@@ -18,7 +18,7 @@
                 <td class="footer_bottom" style="width:240px">
                 <a href="http://www.openclinica.com" target="new"><fmt:message key="openclinica_portal" bundle="${resword}"/></a>
                 |
-                <a href="javascript:openDocWindow('https://docs.openclinica.com')"><fmt:message key="help" bundle="${resword}"/></a>
+                <!-- <a href="javascript:openDocWindow('https://docs.openclinica.com')"><fmt:message key="help" bundle="${resword}"/></a> -->
 
                 </td>
                 <td class="footer_bottom" >

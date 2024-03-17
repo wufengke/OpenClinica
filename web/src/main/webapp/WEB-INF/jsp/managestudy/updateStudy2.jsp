@@ -151,7 +151,11 @@
    </div>
   </td><td>*</td></tr>
 
-  <tr valign="top"><td class="formlabel"><a href="http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate'); return false;"><fmt:message key="protocol_verification" bundle="${resword}"/>:</a></td><td>
+  <tr valign="top"><td class="formlabel">
+  <!-- <a href="http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate" target="def_win" onClick="openDefWindow('http://prsinfo.clinicaltrials.gov/definitions.html#VerificationDate'); return false;">
+  <fmt:message key="protocol_verification" bundle="${resword}"/>:</a> -->
+  <fmt:message key="protocol_verification" bundle="${resword}"/>:
+  </td><td>
 
   <div class="formfieldM_BG"><input type="text" name="protocolDateVerification" value="<c:out value="${protocolDateVerification}"/>" class="formfieldM" id="protocolDateVerificationField"></div>
   <jsp:include page="../showMessage.jsp"><jsp:param name="key" value="protocolDateVerification"/></jsp:include></td>

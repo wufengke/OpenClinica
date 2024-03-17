@@ -7,7 +7,7 @@
 <%@ taglib uri="com.akazaresearch.tags" prefix="aka_frm" %>
 <fmt:setBundle basename="org.akaza.openclinica.i18n.words" var="resword"/>
 <html>
-<head><title>Print CRF</title>
+<head><title>打印 CRF</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <script type="text/JavaScript" language="JavaScript" src=
     "includes/global_functions_javascript.js"></script>
