@@ -5,7 +5,7 @@
 <fmt:setBundle basename="org.akaza.openclinica.i18n.words" var="resword"/>
 <fmt:setBundle basename="org.akaza.openclinica.i18n.terms" var="resterm"/>
 <html>
-<head><title>Choose a format for downloading notes</title></head>
+<head><title><fmt:message key="openclinica" bundle="${resword}"/></head>
 <link rel="stylesheet" href="includes/styles.css" type="text/css">
 <script type="text/JavaScript" language="JavaScript" src="includes/global_functions_javascript.js"></script>
 <%--<c:set var="subjectId" value="${requestScope[subjectId]}" />

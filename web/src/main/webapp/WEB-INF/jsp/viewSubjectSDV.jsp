@@ -2,8 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<fmt:setBundle basename="org.akaza.openclinica.i18n.words" var="resword"/>
+
 <html>
-<head><title>SDV Subject</title></head>
+<head><title>fmt:message key="openclinica" bundle="${resword}"/></title></head>
 <body>
 <link rel="stylesheet" href="../includes/jmesa/jmesa.css" type="text/css">
 <script type="text/JavaScript" language="JavaScript" src="../includes/jmesa/jquery-1.2.3.min.js"></script>

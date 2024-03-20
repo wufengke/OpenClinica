@@ -51,13 +51,13 @@
 
 <c:choose>
  <c:when test="${study != null && study.id>0}">
-  <p><fmt:message key="your_current_active_study_is" bundle="${restext}"/> <c:out value="${study.name}"/>,
+  <p><fmt:message key="your_current_active_study_is" bundle="${restext}"/>：<c:out value="${study.name}"/>，
    <c:choose>
     <c:when test="${!userRole.invalid}">
-     <fmt:message key="with_a_role_of" bundle="${restext}"/> <c:out value="${userRole.role.description}"/>.
+     <fmt:message key="with_a_role_of" bundle="${restext}"/>：<c:out value="${userRole.role.description}"/>。
     </c:when>
     <c:otherwise>
-     <fmt:message key="but_no_role" bundle="${restext}"/>
+     <fmt:message key="but_no_role" bundle="${restext}"/>。
     </c:otherwise>
    </c:choose>
  </c:when>
