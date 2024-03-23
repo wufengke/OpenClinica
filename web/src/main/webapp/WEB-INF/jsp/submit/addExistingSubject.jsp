@@ -179,7 +179,7 @@
 		</tr>
 	</c:if>
 	<tr valign="top">
-		<td class="formlabel"><fmt:message key="date_of_enrollment_for_study" bundle="${resword}"/><b><c:out value="${study.name}" />:</td>
+		<td class="formlabel"><fmt:message key="date_of_enrollment_for_study" bundle="${resword}"/>:</td>
 	  	<td valign="top">
 			<table border="0" cellpadding="0" cellspacing="0">
 				<tr>

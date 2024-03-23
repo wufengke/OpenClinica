@@ -75,7 +75,7 @@
 								<fmt:param><c:out value="${table.totalPageNumbers}" /></fmt:param>
 							</fmt:message>
 						</c:if>
-						Found <%= table.getRows().size() %> Definitions
+						<fmt:message key="found" bundle="${resword}" /> <%= table.getRows().size() %> <fmt:message key="definitions" bundle="${resword}" />
 						</td></c:otherwise>
 					</c:choose>
 				<td valign="top" class="table_tools">

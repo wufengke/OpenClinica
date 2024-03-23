@@ -27,7 +27,7 @@
 <jsp:useBean id="audits" scope="request" class="java.util.ArrayList" />
 
 <html>
-<head><title>fmt:message key="openclinica" bundle="${resword}"/></title>
+<head><title><fmt:message key="openclinica" bundle="${resword}"/></title>
     <script type="text/JavaScript" language="JavaScript" src="includes/Tabs.js"></script>
     <script type="text/JavaScript" language="JavaScript" src="includes/global_functions_javascript.js"></script>
     <script type="text/JavaScript" language="JavaScript" src="includes/CalendarPopup.js"></script>

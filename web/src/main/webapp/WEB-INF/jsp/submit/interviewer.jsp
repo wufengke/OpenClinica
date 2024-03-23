@@ -1,11 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions"
-    prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/favicon.ico">
-
 
 <jsp:useBean scope="request" id="section" class="org.akaza.openclinica.bean.submit.DisplaySectionBean" />
 <jsp:useBean scope="request" id="displayItem" class="org.akaza.openclinica.bean.submit.DisplayItemBean" />
@@ -425,8 +423,7 @@ function callTip(html)
         <b><fmt:message key="event" bundle="${resword}"/>:</b>
     </td>
     <td >
-      <c:out value="${toc.studyEventDefinition.name}" />&nbsp;(<fmt:formatDate
-      value="${toc.studyEvent.dateStarted}" pattern="${dteFormat}" />)
+      <c:out value="${toc.studyEventDefinition.name}" />&nbsp;(<fmt:formatDate value="${toc.studyEvent.dateStarted}" pattern="${dteFormat}" />)
     </td>
 	<td class="table_cell_top" >
 <span><b><fmt:message key="gender" bundle="${resword}"/>:</b></span>
@@ -816,7 +813,7 @@ form element in red <c:out value="FORMMESSAGES: ${formMessages} "/><br/>--%>
 
 <tr>
 
-  <td colspan="5" valign="top" class="table_cell_left"  ><b>Discrepancy Notes on this CRF:</b></td>
+  <td colspan="5" valign="top" class="table_cell_left"  ><b><fmt:message key="discrepancy_Notes_on_this_crf" bundle="resword" />:</b></td>
  
 </tr>
 

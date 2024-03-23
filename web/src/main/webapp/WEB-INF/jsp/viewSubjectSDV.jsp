@@ -5,7 +5,7 @@
 <fmt:setBundle basename="org.akaza.openclinica.i18n.words" var="resword"/>
 
 <html>
-<head><title>fmt:message key="openclinica" bundle="${resword}"/></title></head>
+<head><title><fmt:message key="openclinica" bundle="${resword}"/></title></head>
 <body>
 <link rel="stylesheet" href="../includes/jmesa/jmesa.css" type="text/css">
 <script type="text/JavaScript" language="JavaScript" src="../includes/jmesa/jquery-1.2.3.min.js"></script>
