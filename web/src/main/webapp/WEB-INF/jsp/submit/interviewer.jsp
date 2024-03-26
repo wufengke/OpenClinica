@@ -813,7 +813,7 @@ form element in red <c:out value="FORMMESSAGES: ${formMessages} "/><br/>--%>
 
 <tr>
 
-  <td colspan="5" valign="top" class="table_cell_left"  ><b><fmt:message key="discrepancy_Notes_on_this_crf" bundle="resword" />:</b></td>
+  <td colspan="5" valign="top" class="table_cell_left"  ><b><fmt:message key="discrepancy_Notes_on_this_crf" bundle="${resword}" />:</b></td>
  
 </tr>
 
