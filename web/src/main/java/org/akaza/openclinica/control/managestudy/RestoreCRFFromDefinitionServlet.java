@@ -14,10 +14,12 @@ import org.akaza.openclinica.bean.managestudy.StudyEventDefinitionBean;
 import org.akaza.openclinica.control.core.SecureController;
 import org.akaza.openclinica.core.form.StringUtil;
 import org.akaza.openclinica.dao.service.StudyParameterValueDAO;
+import org.akaza.openclinica.domain.SourceDataVerification;
 import org.akaza.openclinica.view.Page;
 import org.akaza.openclinica.web.InsufficientPermissionException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author jxu
@@ -58,6 +60,12 @@ public class RestoreCRFFromDefinitionServlet extends SecureController {
     
         request.setAttribute("participateFormStatus",participateFormStatus );
 
+        List<String> sdvOptions = new ArrayList<>();
+        sdvOptions.add(SourceDataVerification.AllREQUIRED.toString());
+        sdvOptions.add(SourceDataVerification.PARTIALREQUIRED.toString());
+        sdvOptions.add(SourceDataVerification.NOTREQUIRED.toString());
+        sdvOptions.add(SourceDataVerification.NOTAPPLICABLE.toString());
+        request.setAttribute("sdvOptions", sdvOptions);
         
         if (StringUtil.isBlank(idString)) {
             addPageMessage(respage.getString("please_choose_a_CRF_to_restore"));

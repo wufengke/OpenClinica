@@ -75,6 +75,7 @@ public class RssReaderServlet extends HttpServlet {
             e.printStackTrace();
         } finally {
             pw.println(htmlFeed);
+            System.out.println("htmlFeed=" + htmlFeed);
             pw.close();
         }
     }

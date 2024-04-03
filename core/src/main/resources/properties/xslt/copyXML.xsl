@@ -4,7 +4,7 @@
 xmlns:saxon="http://icl.com/saxon" 
 extension-element-prefixes="saxon">
 	
-	<xsl:output method="xml" encoding="US-ASCII"  use-character-maps="quot"/>
+	<xsl:output method="xml" encoding="utf-8"  use-character-maps="quot"/>
 	<!-- ****************************************************************************************************** -->
 	<!-- File: ODMReportStylesheet.xsl -->
 	<!-- Date: 2010-03-15 -->

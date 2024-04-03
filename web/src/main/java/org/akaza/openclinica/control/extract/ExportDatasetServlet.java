@@ -104,7 +104,6 @@ public class ExportDatasetServlet extends SecureController {
                 datasetId = dsb.getId();
                 logger.info("dataset id was zero, trying session: " + datasetId);
             } catch (NullPointerException e) {
-
                 e.printStackTrace();
                 logger.info("tripped over null pointer exception");
             }
@@ -372,6 +371,7 @@ public class ExportDatasetServlet extends SecureController {
 
                 // response.setContentType("application/vnd.ms-excel");
                 response.setHeader("Content-Disposition", "attachment; filename=" + db.getName() + "_excel.xls");
+                response.setCharacterEncoding("UTF-8");
                 request.setAttribute("generate", generalFileDir + excelFileName);
                 logger.info("set 'generate' to :" + generalFileDir + excelFileName);
                 fileName = excelFileName;

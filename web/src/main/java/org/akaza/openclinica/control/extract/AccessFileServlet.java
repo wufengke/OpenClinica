@@ -80,19 +80,19 @@ if( dsBean.getStudyId() != currentStudy.getId())		{
         logger.debug("found file reference: " + asdfBean.getFileReference() + " and file name: " + asdfBean.getName());
         if (asdfBean.getFileReference().endsWith(".zip")) {
             response.setHeader("Content-disposition", "attachment; filename=\"" + asdfBean.getName() + "\";");
-            response.setContentType("application/zip");
+            response.setContentType("application/zip; charset=utf-8");
             // response.setContentType("application/download");
         } else if (asdfBean.getFileReference().endsWith(".pdf")) {
             response.setHeader("Content-disposition", "attachment; filename=\"" + asdfBean.getName() + "\";");
-            response.setContentType("application/pdf");
+            response.setContentType("application/pdf; charset=utf-8");
             // response.setContentType("application/download; application/pdf");
         } else if (asdfBean.getFileReference().endsWith(".csv")) {
             response.setHeader("Content-disposition", "attachment; filename=\"" + asdfBean.getName() + "\";");
-            response.setContentType("text/csv");
+            response.setContentType("text/csv; charset=utf-8");
             // response.setContentType("application/download; text/csv");
         } else if (asdfBean.getFileReference().endsWith(".xml")) {
             response.setHeader("Content-disposition", "attachment; filename=\"" + asdfBean.getName() + "\";");
-            response.setContentType("text/xml");
+            response.setContentType("text/xml; charset=utf-8");
             // response.setContentType("application/download; text/xml");
         } else if (asdfBean.getFileReference().endsWith(".html")) {
             response.setHeader("Content-disposition", "filename=\"" + asdfBean.getName() + "\";");

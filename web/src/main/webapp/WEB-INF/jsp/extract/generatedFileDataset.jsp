@@ -3,7 +3,7 @@
 
 <%
   String path = (String)request.getAttribute("generate");
-  System.out.println("file path found at jsp "+path);
+  System.out.println("file path found at jsp generatedFileDataset.jsp " + path);
   if ( path != null) {
   	ServletOutputStream sos = null;
   	BufferedOutputStream bos = null;
@@ -11,11 +11,10 @@
   	BufferedInputStream bis = null;
     try {
         if (!path.endsWith(".html")) {
-      		response.setContentType("application/download");
+      		response.setContentType("application/download;charset=UTF-8");
         }
       response.setHeader("Pragma", "public");
-      //response.setHeader("Content-disposition",
-      //                   "attachment; filename=\"" + path + "\"");
+      response.setCharacterEncoding("UTF-8");
       sos = response.getOutputStream();
 
       bos = new BufferedOutputStream(sos);

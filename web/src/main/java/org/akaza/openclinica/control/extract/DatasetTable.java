@@ -19,12 +19,12 @@ import org.akaza.openclinica.view.Table;
  */
 public class DatasetTable extends Table {
     public DatasetTable() {
-        columns.add("Dataset Name");
-        columns.add("Description");
-        columns.add("Owner");
-        columns.add("Creation Date");
-        columns.add("Status");
-        columns.add("Actions");
+        columns.add("数据集名称");
+        columns.add("描述");
+        columns.add("所有者");
+        columns.add("创建时间");
+        columns.add("状态");
+        columns.add("操作");
     }
 
     @Override
@@ -54,12 +54,12 @@ public class DatasetTable extends Table {
         // actions
         row += "<td>";
         if (!s.equals(Status.DELETED)) {
-            String confirmQuestion = "Are you sure you want to delete " + db.getName() + "?";
+            String confirmQuestion = "你确定要删除数据库" + db.getName() + "?";
             String onClick = "onClick=\"return confirm('" + confirmQuestion + "');\"";
-            row += "<a href='" + ViewDatasetsServlet.getLink(db.getId()) + "'>view</a>";
-            row += " <a href='" + EditDatasetServlet.getLink(db.getId()) + "'>edit</a>";
-            row += " <a href='" + RemoveDatasetServlet.getLink(db.getId()) + "'" + onClick + ">delete</a>";
-            row += " <a href='" + ExportDatasetServlet.getLink(db.getId()) + "'" + onClick + ">export dataset</a>";
+            row += "<a href='" + ViewDatasetsServlet.getLink(db.getId()) + "'>查看</a>";
+            row += " <a href='" + EditDatasetServlet.getLink(db.getId()) + "'>编辑</a>";
+            row += " <a href='" + RemoveDatasetServlet.getLink(db.getId()) + "'" + onClick + ">删除</a>";
+            row += " <a href='" + ExportDatasetServlet.getLink(db.getId()) + "'" + onClick + ">导出数据集</a>";
         } else {
             // write the servlet to restore filters later, tbh 01-23-2005
 

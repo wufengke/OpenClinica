@@ -264,6 +264,7 @@ public class GenerateExtractFileService {
                 // >> tbh #4915
                 name = name.replaceAll(" ", "_");
                 String content = (String) contents.get(i);
+                logger.info("createFile content={}", content);
                 File newFile = new File(complete, name);
                 // totalSize = totalSize + (int)newFile.length();
                 newFile.setLastModified(System.currentTimeMillis());
@@ -343,8 +344,7 @@ public class GenerateExtractFileService {
             // created in database!
 
         } catch (Exception e) {
-            logger.warn(e.getMessage());
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
         finally{
             if(w!=null)
@@ -444,8 +444,7 @@ public class GenerateExtractFileService {
             // created in database!
 
         } catch (Exception e) {
-            logger.error(e.getMessage());
-            e.printStackTrace();
+            logger.error(e.getMessage(), e);
         }
         finally{
             if(w!=null)
@@ -563,8 +562,7 @@ public class GenerateExtractFileService {
             // created in database!
 
         } catch (Exception e) {
-            logger.error("-- exception thrown at createFile: " + e.getMessage());
-            e.printStackTrace();
+            logger.error("-- exception thrown at createFile: " + e.getMessage(), e);
         }
 
         return fbFinal.getId();

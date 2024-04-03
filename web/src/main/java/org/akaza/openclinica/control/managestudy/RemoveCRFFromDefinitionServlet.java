@@ -14,10 +14,12 @@ import org.akaza.openclinica.bean.managestudy.StudyEventDefinitionBean;
 import org.akaza.openclinica.control.core.SecureController;
 import org.akaza.openclinica.core.form.StringUtil;
 import org.akaza.openclinica.dao.service.StudyParameterValueDAO;
+import org.akaza.openclinica.domain.SourceDataVerification;
 import org.akaza.openclinica.view.Page;
 import org.akaza.openclinica.web.InsufficientPermissionException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Remove the reference to a CRF from a study event definition
@@ -54,7 +56,12 @@ public class RemoveCRFFromDefinitionServlet extends SecureController {
         String participateFormStatus = spvdao.findByHandleAndStudy(sed.getStudyId(), "participantPortal").getValue();
     
         request.setAttribute("participateFormStatus",participateFormStatus );
-
+        List<String> sdvOptions = new ArrayList<>();
+        sdvOptions.add(SourceDataVerification.AllREQUIRED.toString());
+        sdvOptions.add(SourceDataVerification.PARTIALREQUIRED.toString());
+        sdvOptions.add(SourceDataVerification.NOTREQUIRED.toString());
+        sdvOptions.add(SourceDataVerification.NOTAPPLICABLE.toString());
+        request.setAttribute("sdvOptions", sdvOptions);
         if (edcs != null && edcs.size() > 1) {
             String idString = request.getParameter("id");
             logger.info("crf id:" + idString);

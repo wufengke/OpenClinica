@@ -11,7 +11,7 @@
 	<c:when test="${downloadStatus == 'true'}">
 		<%
 		  String path = (String)request.getAttribute("generate");
-		  System.out.println("file path found at jsp "+path);
+		  System.out.println("file path found at jsp downloadAttachedFile.jsp " + path);
 		  if ( path != null) {
 		  	ServletOutputStream sos = null;
 		  	BufferedOutputStream bos = null;

@@ -1,27 +1,30 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%--<%@page contentType="application/vnd.ms-excel"%>
+<%--
+    <%@page contentType="application/vnd.ms-excel"%>
 
-<jsp:useBean scope="request" id="generate" class="java.lang.String"/>
+    <jsp:useBean scope="request" id="generate" class="java.lang.String"/>
 
-<jsp:forward page="<%=generate%>"/>--%>
+    <jsp:forward page="<%=generate%>"/>
+--%>
 
 <%@ page import="java.io.*" %>
 
 <%
   String path = (String)request.getAttribute("generate");
-  System.out.println("** file path found at jsp "+path);
+  System.out.println("file path found at jsp generatedExcelDateset.jsp " + path);
   if ( path != null) {
   	ServletOutputStream sos = null;
   	BufferedOutputStream bos = null;
   	InputStream is = null;
   	BufferedInputStream bis = null;
     try {
-      response.setContentType("application/vnd.ms-excel");
+      response.setContentType("application/vnd.ms-excel;charset=UTF-8");
+      response.setCharacterEncoding("UTF-8");
       response.setHeader("Pragma", "public");
       //response.setHeader("Content-disposition",
       //                   "attachment; filename=\"" + path + "\"");
       sos = response.getOutputStream();
-      
+
       bos = new BufferedOutputStream(sos);
       java.io.File local = new java.io.File(path);
       is = new FileInputStream(local);

@@ -361,7 +361,7 @@ public abstract class SecureController extends HttpServlet implements SingleThre
 
         successMsg =
             successMsg.replace("$linkURL", "<a href=\"" + CoreResources.getField("sysURL.base") + "AccessFile?fileId=" + fileBeans.get(0).getId()
-                + "\">here </a>");
+                + "\">点击这里 </a>");
 
         return successMsg;
     }
@@ -376,6 +376,7 @@ public abstract class SecureController extends HttpServlet implements SingleThre
     private void process(HttpServletRequest request, HttpServletResponse response) throws OpenClinicaException, UnsupportedEncodingException {
 
         request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         session = request.getSession();
         // BWP >> 1/8/2008
         try {
